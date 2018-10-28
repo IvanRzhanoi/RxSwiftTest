@@ -47,7 +47,7 @@
                                 <rect key="frame" x="16" y="569" width="51" height="31"/>
                             </switch>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7td-KF-pOK">
-                                <rect key="frame" x="16" y="119" width="343" height="2"/>
+                                <rect key="frame" x="32" y="119" width="311" height="2"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="my step label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3B-IL-p6v">
                                 <rect key="frame" x="257.5" y="140.5" width="101.5" height="21"/>
@@ -121,10 +121,10 @@
                             <constraint firstItem="KEK-PD-Q6P" firstAttribute="top" secondItem="NPT-Ef-TFK" secondAttribute="bottom" constant="16" id="Jq8-Js-m77"/>
                             <constraint firstItem="rOY-JL-fDb" firstAttribute="leading" secondItem="M1j-Pe-mp1" secondAttribute="trailing" constant="8" id="KXx-YD-WM1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="V3B-IL-p6v" secondAttribute="trailing" constant="16" id="Nrt-y0-Goy"/>
-                            <constraint firstItem="7td-KF-pOK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="P6w-Gq-dTW"/>
+                            <constraint firstItem="7td-KF-pOK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="P6w-Gq-dTW"/>
                             <constraint firstItem="Df6-LO-IUZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="QUQ-Dr-KHr"/>
                             <constraint firstItem="ihu-ZJ-Zmu" firstAttribute="top" secondItem="lTh-hI-8xf" secondAttribute="bottom" constant="16" id="QUs-So-LiM"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="7td-KF-pOK" secondAttribute="trailing" id="S2Z-g8-q7s"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7td-KF-pOK" secondAttribute="trailing" constant="16" id="S2Z-g8-q7s"/>
                             <constraint firstItem="W2v-qW-0Pt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="VGw-CP-zeg"/>
                             <constraint firstItem="Bxg-6N-FZQ" firstAttribute="top" secondItem="lSO-SG-tEt" secondAttribute="bottom" constant="16" id="b2W-Tq-anl"/>
                             <constraint firstItem="lTh-hI-8xf" firstAttribute="top" secondItem="Df6-LO-IUZ" secondAttribute="bottom" constant="20" id="bq8-Yi-Zdm"/>

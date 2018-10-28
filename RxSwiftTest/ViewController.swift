@@ -84,7 +84,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         myTapGestureRecogniser.rx.event.asDriver().drive(onNext: { [unowned self] _ in
             self.view.endEditing(true)
-//            self.myTextField.resignFirstResponder()
         }).disposed(by: disposeBag)
         
         myTextField.rx.text.map{ $0 }.bind {
@@ -94,9 +93,35 @@ class ViewController: UIViewController {
         myTextView.rx.text.bind(onNext: {
             self.myTextViewLabel.text = "Character count: \($0!.count)"
         }).disposed(by: disposeBag)
-//        //bindNext {
-//            self.myTextViewLabel.text = "Character count: \($0?.count)"
-//        }.disposed(by: disposeBag)
+        
+        myButton.rx.tap.asDriver().drive(onNext: {// (self) _ in
+            self.myButtonLabel.text! += "Hello, RxSwift"
+            self.view.endEditing(true)
+            UIView.animate(withDuration: 0.5, animations: {
+                self.view.layoutIfNeeded()
+            })
+        }).disposed(by: disposeBag)
+        
+        mySlider.rx.value.asDriver().drive(myProgressView.rx.progress).disposed(by: disposeBag)
+        
+        mySegmentedControl.rx.value.asDriver().skip(1).drive(onNext: {
+            self.mySegmentedControlLabel.text = "Selected segment = \($0)"
+            UIView.animate(withDuration: 0.5, animations: {
+                self.view.layoutIfNeeded()
+            })
+        }).disposed(by: disposeBag)
+        
+        myDatePicker.rx.date.asDriver()
+            .map {
+                self.dateFormatter.string(from: $0)
+            }.drive(onNext: {
+                self.myDatePickerLabel.text = "Selected date: \($0)"
+            }).disposed(by: disposeBag)
+        
+        mySwitch.rx.value.asDriver().map { !$0 }.drive(myActivityIndicator.rx.isHidden).disposed(by: disposeBag)
+        mySwitch.rx.value.asDriver().drive(myActivityIndicator.rx.isAnimating).disposed(by: disposeBag)
+        
+        myStepper.rx.value.asDriver().map { String(Int($0)) }.drive(myStepperLabel.rx.text).disposed(by: disposeBag)
     }
 }
 
