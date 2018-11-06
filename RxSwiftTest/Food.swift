@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxDataSources
 
 struct Food {
     let name: String
@@ -20,8 +21,13 @@ struct Food {
     }
 }
 
-extension Food: CustomStringConvertible {
-    var description: String {
-        return "\(name): flickr.com/\(flickrID)"
-    }
+extension Food: IdentifiableType {
+    typealias Identity = String
+    var identity: Identity { return flickrID }
 }
+
+//extension Food: CustomStringConvertible {
+//    var description: String {
+//        return "\(name): flickr.com/\(flickrID)"
+//    }
+//}

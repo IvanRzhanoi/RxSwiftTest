@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2203D3952191AAC70020CDCF /* SectionModelFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2203D3942191AAC70020CDCF /* SectionModelFood.swift */; };
+		2203D3972191BD7D0020CDCF /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2203D3962191BD7D0020CDCF /* FourthViewController.swift */; };
+		2203D3992191C3F20020CDCF /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2203D3982191C3F20020CDCF /* Repository.swift */; };
+		2203D39B2191C4300020CDCF /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2203D39A2191C4300020CDCF /* ViewModel.swift */; };
+		2203D39D2191C45A0020CDCF /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2203D39C2191C45A0020CDCF /* APIProvider.swift */; };
 		22505DCE2185B627001DDE5E /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22505DCD2185B627001DDE5E /* RxSwift.framework */; };
 		2287C248218DDA560038EC6D /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2287C247218DDA560038EC6D /* Food.swift */; };
 		2287C24A218DDB250038EC6D /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2287C249218DDB250038EC6D /* SecondViewController.swift */; };
@@ -22,6 +27,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2203D3942191AAC70020CDCF /* SectionModelFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionModelFood.swift; sourceTree = "<group>"; };
+		2203D3962191BD7D0020CDCF /* FourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
+		2203D3982191C3F20020CDCF /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		2203D39A2191C4300020CDCF /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		2203D39C2191C45A0020CDCF /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
 		223EABE2216FE13A00ED12B0 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22505DCD2185B627001DDE5E /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2287C247218DDA560038EC6D /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
@@ -97,11 +107,16 @@
 				22FB9FD32162366F00D71DF3 /* Assets.xcassets */,
 				22FB9FD52162366F00D71DF3 /* LaunchScreen.storyboard */,
 				22FB9FD82162366F00D71DF3 /* Info.plist */,
-				2287C247218DDA560038EC6D /* Food.swift */,
 				2287C249218DDB250038EC6D /* SecondViewController.swift */,
+				2287C247218DDA560038EC6D /* Food.swift */,
+				2203D3942191AAC70020CDCF /* SectionModelFood.swift */,
 				2287C24B218DEC510038EC6D /* ThirdViewController.swift */,
 				2287C24D218DED190038EC6D /* Cell.swift */,
 				2287C251218DED7D0038EC6D /* Header.swift */,
+				2203D3962191BD7D0020CDCF /* FourthViewController.swift */,
+				2203D3982191C3F20020CDCF /* Repository.swift */,
+				2203D39A2191C4300020CDCF /* ViewModel.swift */,
+				2203D39C2191C45A0020CDCF /* APIProvider.swift */,
 			);
 			path = RxSwiftTest;
 			sourceTree = "<group>";
@@ -236,10 +251,15 @@
 				2287C252218DED7D0038EC6D /* Header.swift in Sources */,
 				2287C24A218DDB250038EC6D /* SecondViewController.swift in Sources */,
 				22FB9FCF2162366D00D71DF3 /* ViewController.swift in Sources */,
+				2203D39B2191C4300020CDCF /* ViewModel.swift in Sources */,
+				2203D3972191BD7D0020CDCF /* FourthViewController.swift in Sources */,
+				2203D39D2191C45A0020CDCF /* APIProvider.swift in Sources */,
 				2287C24E218DED190038EC6D /* Cell.swift in Sources */,
 				2287C24C218DEC510038EC6D /* ThirdViewController.swift in Sources */,
 				22FB9FCD2162366D00D71DF3 /* AppDelegate.swift in Sources */,
+				2203D3992191C3F20020CDCF /* Repository.swift in Sources */,
 				2287C248218DDA560038EC6D /* Food.swift in Sources */,
+				2203D3952191AAC70020CDCF /* SectionModelFood.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

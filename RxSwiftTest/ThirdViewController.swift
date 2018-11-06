@@ -16,24 +16,6 @@ struct AnimatedSectionModel {
     var data: [String]
 }
 
-extension AnimatedSectionModel: AnimatableSectionModelType {
-    typealias Item = String
-    typealias Identity = String
-    
-    var identity: Identity { return title }
-    var items: [Item] { return data }
-    
-    init(original: AnimatedSectionModel, items: [String]) {
-        self = original
-        data = items
-    }
-}
-
-extension String {
-    public typealias Identity = String
-    public var identity: Identity { return self }
-}
-
 class ThirdViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -118,4 +100,22 @@ class ThirdViewController: UIViewController {
             }
         }).disposed(by: disposeBag)
     }
+}
+
+extension AnimatedSectionModel: AnimatableSectionModelType {
+    typealias Item = String
+    typealias Identity = String
+    
+    var identity: Identity { return title }
+    var items: [Item] { return data }
+    
+    init(original: AnimatedSectionModel, items: [String]) {
+        self = original
+        data = items
+    }
+}
+
+extension String {
+    public typealias Identity = String
+    public var identity: Identity { return self }
 }

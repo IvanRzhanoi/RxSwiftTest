@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxDataSources
 
 class SecondViewController: UIViewController {
     
@@ -16,27 +17,43 @@ class SecondViewController: UIViewController {
     
     // Creating Observable with an array of elements
     
-    let food = Observable.just([
-        Food(name: "Kids Burger", flickrID: "kids-burger"),
-        Food(name: "Lasagna", flickrID: "lasagna"),
-        Food(name: "Sausage", flickrID: "sausage"),
-        Food(name: "Vegetables", flickrID: "vegetables")
-    ])
+//    let food = Observable.just([
+//        Food(name: "Kids Burger", flickrID: "kids-burger"),
+//        Food(name: "Lasagna", flickrID: "lasagna"),
+//        Food(name: "Sausage", flickrID: "sausage"),
+//        Food(name: "Vegetables", flickrID: "vegetables")
+//    ])
     
+    let foodsData = SectionModelFood()
+    let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, Food>>(configureCell: { _, tableView, indexPath, foods in
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.textLabel?.text = foods.name
+        cell.detailTextLabel?.text = foods.flickrID
+        cell.imageView?.image = foods.image
+        return cell
+    })
     let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        food.bind(to: myTableView.rx.items(cellIdentifier: "Cell")) { row, foods, cell in
-            cell.textLabel?.text = foods.name
-            cell.detailTextLabel?.text = foods.flickrID
-            cell.imageView?.image = foods.image
-        }.disposed(by: disposeBag)
+//        food.bind(to: myTableView.rx.items(cellIdentifier: "Cell")) { row, foods, cell in
+//            cell.textLabel?.text = foods.name
+//            cell.detailTextLabel?.text = foods.flickrID
+//            cell.imageView?.image = foods.image
+//        }.disposed(by: disposeBag)
+//
+//        myTableView.rx.modelSelected(Food.self).subscribe(onNext: {
+//            print("You have selected \($0)")
+//        }).disposed(by: disposeBag)
         
-        myTableView.rx.modelSelected(Food.self).subscribe(onNext: {
-            print("You have selected \($0)")
-        }).disposed(by: disposeBag)
+        dataSource.titleForHeaderInSection = { data, section in
+            data.sectionModels[section].model
+        }
+
+        foodsData.foods.bind(to: myTableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
+        
+        myTableView.rx.setDelegate(self).disposed(by: disposeBag)
     }
 }
 
@@ -58,9 +75,13 @@ class SecondViewController: UIViewController {
 //        return cell
 //    }
 //}
-//
-//extension SecondViewController: UITableViewDelegate {
+
+extension SecondViewController: UITableViewDelegate {
 //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        print("You have selected \(food[indexPath.row])")
 //    }
-//}
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(arc4random_uniform(64) + 32)
+    }
+}
