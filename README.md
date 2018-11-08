@@ -22,7 +22,7 @@ Networking with JSON
 
 ### RxSwiftTestPlayground
 
-A bunch of examples showing RxSwift functionality
+A bunch of examples showing RxSwift functionality; includes helper method
 
 ### Required Pods
 
