@@ -23,3 +23,7 @@ Networking with JSON
 ### RxSwiftTestPlayground
 
 A bunch of examples showing RxSwift functionality
+
+### Required Pods
+
+RxSwift (4.3.1), RxCocoa (4.4.0), RxDataSource (3.0)
